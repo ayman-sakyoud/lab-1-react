@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import HelloWorld from "./HelloWorld";
+import Greeting from "./Greeting";
+import Profil from "./Profil";
+import photoDeProfil from "./téléchargement.jpeg";
+import Voiture from "./Voiture";
+import ListeCourses from "./ListeCourses";
 
 function App() {
+  const utilisateur = { nom: "ayman", photo: photoDeProfil };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HelloWorld />
+      <Greeting prenom="Ayman" />
+      <Greeting prenom="Mohammed" />
+      <Profil utilisateur={utilisateur} taille={150} />
+      <Voiture marque="Kia" modele="Camry" couleur="blue" />
+      <ListeCourses objets={["java", "php", "React"]} />
+      <ListeCourses objets={["html", "css", "javascript"]} />
     </div>
   );
 }
